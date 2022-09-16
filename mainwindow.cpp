@@ -1,12 +1,25 @@
+#include <QtDebug>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QMessageBox>
+#include <QPixmap>
+#include <QtWidgets>
+
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "interface.h"
+#include "dialog.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QString place ="C:/Users/mehdi/Documents/Projet_Mehdi/foundergif.gif";
+    ui->label->setMask((new QPixmap(place))->mask());
+    QMovie *movie=new QMovie(place);
+    ui->label->setMovie(movie);
+    movie->start();
 }
 
 MainWindow::~MainWindow()
@@ -17,14 +30,13 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_entrer_clicked()
 {
-    interface in;
+    Dialog d;
     QString id=ui->login->text();
     QString mp=ui->password->text();
     if(id=="mehdi" && mp=="0000")
     {
-
-        in.setModal(true);
-        in.exec();
+        d.setModal(true);
+        d.exec();
     }
 }
 

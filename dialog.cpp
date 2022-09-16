@@ -1,5 +1,5 @@
-#include "interface.h"
-#include "ui_interface.h"
+#include "dialog.h"
+#include "ui_dialog.h"
 #include "client.h"
 #include "evenement.h"
 
@@ -9,28 +9,25 @@
 #include <QMessageBox>
 #include<QDesktopServices>
 
-interface::interface(QWidget *parent) :
+Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::interface)
+    ui(new Ui::Dialog)
 {
+    client c;
+    evenement e;
     ui->setupUi(this);
-    client client;
-    ui->lineEdit_13->setPlaceholderText("Identifiant");
-    ui->tabclient->setModel(client.afficher());//refresh
-    ui->comboBox_2->setModel(client.afficher());
-    ui->comboBox_ID_modifier->setModel(client.afficher());
-
-    ui->leid_3->setValidator(new QIntValidator(0, 9999999, this));
-
-    //ui->tabevenement_2->setModel(E.afficher());
+    ui->tabclient->setModel(c.afficher());
+    ui->tabevenement_2->setModel(e.afficher());
+    ui->comboBox_2->setModel(c.afficher());
+    ui->comboBox_ID_modifier->setModel(c.afficher());
 }
 
-interface::~interface()
+Dialog::~Dialog()
 {
     delete ui;
 }
 
-void interface::on_pushButton_ajouter_client_clicked()
+void Dialog::on_pushButton_ajouter_client_clicked()
 {
     client c;
     bool test;
@@ -55,7 +52,7 @@ void interface::on_pushButton_ajouter_client_clicked()
          if(test)
          {
 
-             ui->tabclient->setModel(c.afficher());//refresh
+             ui->tabclient->setModel(c.afficher());
              QMessageBox::information(nullptr, QObject::tr("Ajouter un client"),
                                QObject::tr("client ajouté.\n"
                                            "Click Cancel to exit."), QMessageBox::Cancel);
@@ -68,7 +65,7 @@ void interface::on_pushButton_ajouter_client_clicked()
 }
 
 
-void interface::on_pushButton_rechercher_client_clicked()
+void Dialog::on_pushButton_rechercher_client_clicked()
 {
     client client;
     int id;
@@ -83,7 +80,7 @@ void interface::on_pushButton_rechercher_client_clicked()
 }
 
 
-void interface::on_pushButton_imprimer_clicked()
+void Dialog::on_pushButton_imprimer_clicked()
 {
     QPdfWriter pdf("C:/Users/mehdi/Desktop/pdf2A/Pdf.pdf");
     QPainter painter(&pdf);
@@ -125,7 +122,7 @@ void interface::on_pushButton_imprimer_clicked()
 }
 
 
-void interface::on_pushButton_modifier_client_clicked()
+void Dialog::on_pushButton_modifier_client_clicked()
 {
     client client;
     int id= ui->comboBox_ID_modifier->currentText().toInt();
@@ -152,7 +149,7 @@ void interface::on_pushButton_modifier_client_clicked()
 }
 
 
-void interface::on_pushButton_supprimer_client_clicked()
+void Dialog::on_pushButton_supprimer_client_clicked()
 {
     client client;
     int res=ui->comboBox_2->currentText().toInt();
@@ -173,7 +170,7 @@ void interface::on_pushButton_supprimer_client_clicked()
 }
 
 
-void interface::on_pushButton_rechercher_evenements_clicked()
+void Dialog::on_pushButton_rechercher_evenements_clicked()
 {
     int id_eve;
     evenement e;
@@ -187,7 +184,7 @@ void interface::on_pushButton_rechercher_evenements_clicked()
 }
 
 
-void interface::on_pbimprim_2_clicked()
+void Dialog::on_pbimprim_2_clicked()
 {
     QPdfWriter pdf("C:/Users/mehdi/Desktop/pdf2A/liste_des_evenements.pdf");
     QPainter painter(&pdf);
@@ -232,7 +229,7 @@ void interface::on_pbimprim_2_clicked()
 }
 
 
-void interface::on_pbajouter1_2_clicked()
+void Dialog::on_pbajouter1_2_clicked()
 {
     int id=ui->leid_3->text().toInt();
     QString titre=ui->letitre_3->text();
@@ -256,7 +253,7 @@ void interface::on_pbajouter1_2_clicked()
 }
 
 
-void interface::on_pbmodif1_2_clicked()
+void Dialog::on_pbmodif1_2_clicked()
 {
     int id= ui->idmod1_2->text().toInt();
         QString titre = ui->titremod1_2->text();
@@ -285,7 +282,7 @@ void interface::on_pbmodif1_2_clicked()
 }
 
 
-void interface::on_pbsupp1_2_clicked()
+void Dialog::on_pbsupp1_2_clicked()
 {
     evenement e ;
     e.setid(ui->idsupp1_2->text().toInt());
@@ -303,16 +300,15 @@ msgBox.exec();
 }
 
 
-void interface::on_radioButton_tri_client_clicked()
+void Dialog::on_radioButton_tri_client_clicked()
 {
     client client;
     ui->tabclient->setModel( client.afficher_tri());
 }
 
 
-void interface::on_radioButton_tri_client_2_clicked()
+void Dialog::on_radioButton_tri_client_2_clicked()
 {
     client client;
     ui->tabclient->setModel( client.afficher_tri_2());
 }
-

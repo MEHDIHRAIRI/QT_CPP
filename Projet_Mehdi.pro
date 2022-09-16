@@ -12,21 +12,26 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     client.cpp \
     connexion.cpp \
-    interface.cpp \
+    dialog.cpp \
+    evenement.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     client.h \
     connexion.h \
-    interface.h \
+    dialog.h \
+    evenement.h \
     mainwindow.h
 
 FORMS += \
-    interface.ui \
+    dialog.ui \
     mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    foundergif.gif

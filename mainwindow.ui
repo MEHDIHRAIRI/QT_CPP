@@ -50,7 +50,7 @@ color:white;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(81, 81, 81);</string>
+     <string notr="true">color: rgb(255,255,255);</string>
     </property>
     <property name="text">
      <string>LOGIN</string>
@@ -70,6 +70,9 @@ color:white;</string>
 border:1px solid #ccc;
 border-radius:4px;</string>
     </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
    </widget>
    <widget class="QLabel" name="label_7">
     <property name="geometry">
@@ -88,7 +91,7 @@ border-radius:4px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(81, 81, 81);</string>
+     <string notr="true">color: rgb(255,255,255);</string>
     </property>
     <property name="text">
      <string>PASSWORD</string>
@@ -125,7 +128,7 @@ border:1px solid #ccc;
 border-radius:4px;</string>
     </property>
     <property name="echoMode">
-     <enum>QLineEdit::Password</enum>
+     <enum>QLineEdit::Normal</enum>
     </property>
    </widget>
    <widget class="QPushButton" name="entrer">
@@ -164,7 +167,7 @@ border-radius: 4px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);</string>
+     <string notr="true">color: rgb(255,255,255);</string>
     </property>
     <property name="text">
      <string>Mot de passe oublié</string>

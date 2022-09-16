@@ -1,4 +1,4 @@
-#include "interface.h"
+#include "mainwindow.h".h"
 #include "connexion.h"
 
 #include <QApplication>
@@ -10,11 +10,11 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    interface w;
+    MainWindow m;
     Connexion c;
        bool test=c.ouvrirConnexion();
        if(test)
-       {w.show();
+       {m.show();
            QMessageBox::information(nullptr, QObject::tr("database is open"),
                        QObject::tr("welcome.\n"
                                    "Click Cancel to exit."), QMessageBox::Cancel);
