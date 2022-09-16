@@ -10,7 +10,7 @@ db.setDatabaseName("Source_Projet2A");
 db.setUserName("mahdi");
 db.setPassword("0606");
 if (db.open())
-    test=true;
+{test=true;}
 return  test;
 }
 void Connexion::fermerConnexion()

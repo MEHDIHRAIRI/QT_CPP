@@ -1,20 +1,23 @@
-QT       += core gui sql printsupport network
+QT       += core gui sql printsupport network serialport multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++17
+CONFIG += c++11 console
 
+DEFINES += QT_DEPRECATED_WARNINGS
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    client.cpp \
     connexion.cpp \
     interface.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    client.h \
     connexion.h \
     interface.h \
     mainwindow.h

@@ -34,7 +34,7 @@
     <enum>QTabWidget::Triangular</enum>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -600,8 +600,8 @@ text-align:center;</string>
          <rect>
           <x>380</x>
           <y>200</y>
-          <width>93</width>
-          <height>28</height>
+          <width>31</width>
+          <height>30</height>
          </rect>
         </property>
         <property name="styleSheet">
