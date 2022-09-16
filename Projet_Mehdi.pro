@@ -1,4 +1,4 @@
-QT       += core gui sql printsupport network serialport multimedia
+QT       += core gui sql printsupport network serialport multimedia quickwidgets quick
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -35,3 +35,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     foundergif.gif
+
+RESOURCES += \
+    qml.qrc

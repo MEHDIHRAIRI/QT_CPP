@@ -3,11 +3,13 @@
 #include "client.h"
 #include "evenement.h"
 
+#include <QtWidgets>
 #include<QPainter>
 #include<QPdfWriter>
 #include<QMediaPlayer>
 #include <QMessageBox>
 #include<QDesktopServices>
+#include <QQuickView>
 
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
@@ -311,3 +313,14 @@ void Dialog::on_radioButton_tri_client_2_clicked()
     client client;
     ui->tabclient->setModel( client.afficher_tri_2());
 }
+
+void Dialog::on_pbimprim_3_clicked()
+{
+QQuickView view;
+//QStringLiteral("qrc:/map.qml")
+view.setSource(QUrl(QStringLiteral("qrc:/map.qml")));
+view.setResizeMode(QQuickView::SizeRootObjectToView);
+view.resize(1024, 768);
+view.show();
+}
+

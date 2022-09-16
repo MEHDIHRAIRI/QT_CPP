@@ -40,6 +40,8 @@ private slots:
 
     void on_pbsupp1_2_clicked();
 
+    void on_pbimprim_3_clicked();
+
 private:
     Ui::Dialog *ui;
 };

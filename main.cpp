@@ -3,13 +3,18 @@
 
 #include <QApplication>
 #include <QMessageBox>
-
-
+#include <QQuickView>
 
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    QQuickView view;
+    //QStringLiteral("qrc:/map.qml")
+    view.setSource(QUrl(QStringLiteral("qrc:/map.qml")));
+    view.setResizeMode(QQuickView::SizeRootObjectToView);
+    view.resize(1024, 768);
+    view.show();
     MainWindow m;
     Connexion c;
        bool test=c.ouvrirConnexion();

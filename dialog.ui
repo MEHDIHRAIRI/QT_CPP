@@ -34,7 +34,7 @@
     <enum>QTabWidget::Triangular</enum>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -670,7 +670,7 @@ color :white;
       </rect>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab_16">
       <attribute name="title">
@@ -1038,7 +1038,7 @@ border: 3px solid darkgray;
       <rect>
        <x>580</x>
        <y>397</y>
-       <width>411</width>
+       <width>191</width>
        <height>41</height>
       </rect>
      </property>
@@ -1096,6 +1096,32 @@ color :white;
      </property>
      <property name="text">
       <string>Rechercher</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pbimprim_3">
+     <property name="geometry">
+      <rect>
+       <x>780</x>
+       <y>400</y>
+       <width>211</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 15px;
+background-color:rgb(137,207,240);
+font-weight: bold;
+color:black;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
+     </property>
+     <property name="text">
+      <string>map</string>
      </property>
     </widget>
    </widget>
