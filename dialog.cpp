@@ -82,7 +82,7 @@ void Dialog::on_pushButton_rechercher_client_clicked()
 
 void Dialog::on_pushButton_imprimer_clicked()
 {
-    QPdfWriter pdf("C:/Users/mehdi/Desktop/pdf2A/Pdf.pdf");
+    QPdfWriter pdf("C:/Users/mehdi/Desktop/pdf2A/liste_des_clients.pdf");
     QPainter painter(&pdf);
    int i = 4000;
         painter.setPen(Qt::black);
@@ -112,7 +112,7 @@ void Dialog::on_pushButton_imprimer_clicked()
         int reponse = QMessageBox::question(this, "Génerer PDF", "<PDF Enregistré>...Vous Voulez Affichez Le PDF ?", QMessageBox::Yes |  QMessageBox::No);
             if (reponse == QMessageBox::Yes)
             {
-                QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/mehdi/Desktop/pdf2A/Pdf.pdf"));
+                QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/mehdi/Desktop/pdf2A/liste_des_clients.pdf"));
                 painter.end();
             }
             if (reponse == QMessageBox::No)
@@ -200,8 +200,7 @@ void Dialog::on_pbimprim_2_clicked()
         painter.drawText(200,3300,"id_eve");
         painter.drawText(1700,3300,"titre");
         painter.drawText(3200,3300,"lieu");
-        painter.drawText(4900,3300,"cath");
-        painter.drawText(6600,3300,"date_eve");
+        painter.drawText(4900,3300,"date_eve");
 
         QSqlQuery query;
         query.prepare("select * from evenement");
